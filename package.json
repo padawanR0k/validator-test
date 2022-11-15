@@ -49,12 +49,16 @@
     ]
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.10",
+    "antd": "^4.24.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.39.3",
     "react-router-dom": "6.4.2",
     "styled-components": "5.3.6",
     "styled-media-query": "2.1.2",
-    "vite-plugin-svgr": "2.2.1"
+    "vite-plugin-svgr": "2.2.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@storybook/addon-actions": "6.5.12",

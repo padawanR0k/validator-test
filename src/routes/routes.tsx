@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Base } from '~/layouts/Base'
 import { About } from '~/pages/About'
 import { Home } from '~/pages/Home'
+import { SignUp } from '~/pages/SignUp'
 
 export function AppRoutes() {
   return (
@@ -10,6 +11,7 @@ export function AppRoutes() {
       <Route element={<Base />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/about" element={<SignUp />} />
       </Route>
     </Routes>
   )
