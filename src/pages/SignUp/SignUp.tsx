@@ -1,6 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup'
+import { Form } from 'antd'
 import Input from 'antd/lib/input/Input'
-import { FormProvider, useForm } from 'react-hook-form'
+import { Controller, FormProvider, useForm } from 'react-hook-form'
 
 import { Heading } from '~/components/Heading'
 
@@ -12,15 +13,72 @@ export function SignUp() {
     resolver: yupResolver(yupSchema),
   })
 
+  const { control } = formContext
+
   return (
     <FormProvider {...formContext}>
       <S.Page>
         <Heading align="center">SignUp</Heading>
 
         <S.Container>
-          <Input type="text" id="id" />
-          <Input type="password" id="password" />
-          <Input type="password" id="passwordConfirm" />
+          <Controller
+            name="id"
+            control={control}
+            render={({ field, formState }) => (
+              <Form.Item
+                label="Id"
+                validateStatus={formState.errors?.id ? 'error' : 'success'}
+                help={formState.errors?.id?.message}
+              >
+                <Input type="text" id="id" {...field} />
+              </Form.Item>
+            )}
+          />
+          <Controller
+            name="email"
+            control={control}
+            render={({ field, formState }) => (
+              <Form.Item
+                label="email"
+                validateStatus={formState.errors?.email ? 'error' : 'success'}
+                help={formState.errors?.email?.message}
+              >
+                <Input type="text" id="email" {...field} />
+              </Form.Item>
+            )}
+          />
+
+          <Controller
+            name="password"
+            control={control}
+            render={({ field, formState }) => (
+              <Form.Item
+                label="password"
+                validateStatus={
+                  formState.errors?.password ? 'error' : 'success'
+                }
+                help={formState.errors?.password?.message}
+              >
+                <Input type="password" id="password" {...field} />
+              </Form.Item>
+            )}
+          />
+
+          <Controller
+            name="passwordConfirm"
+            control={control}
+            render={({ field, formState }) => (
+              <Form.Item
+                label="passwordConfirm"
+                validateStatus={
+                  formState.errors?.passwordConfirm ? 'error' : 'success'
+                }
+                help={formState.errors?.passwordConfirm?.message}
+              >
+                <Input type="password" id="passwordConfirm" {...field} />
+              </Form.Item>
+            )}
+          />
         </S.Container>
       </S.Page>
     </FormProvider>
