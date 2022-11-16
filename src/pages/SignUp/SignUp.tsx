@@ -11,6 +11,7 @@ import { yupSchema } from './validators/yup'
 export function SignUp() {
   const formContext = useForm<SignUpForm>({
     resolver: yupResolver(yupSchema),
+    mode: 'onChange',
   })
 
   const { control } = formContext
@@ -28,7 +29,9 @@ export function SignUp() {
               <Form.Item
                 label="Id"
                 validateStatus={formState.errors?.id ? 'error' : 'success'}
-                help={formState.errors?.id?.message}
+                help={
+                  formState.errors?.id ? '아이디는 글자만 입력가능합니다' : ''
+                }
               >
                 <Input type="text" id="id" {...field} />
               </Form.Item>
