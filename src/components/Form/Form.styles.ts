@@ -1,26 +1,21 @@
 import styled, { css } from 'styled-components'
 
 export const Page = styled.div`
-  ${({ theme }) => css`
-    padding: ${theme.spacing[16]};
-  `}
+  padding: 4rem;
 `
 
 export const Container = styled.div`
-  ${({ theme }) => css`
-    padding: ${theme.spacing[8]};
-    max-width: 60rem;
-    margin-inline: auto;
+  padding: 2rem;
+  max-width: 60rem;
+  margin-inline: auto;
 
-    h1 {
-      margin-bottom: ${theme.spacing[8]};
-    }
+  h1 {
+    margin-bottom: 2rem;
+  }
 
-    p {
-      color: ${theme.colors.slate[800]};
-      margin-bottom: ${theme.spacing[8]};
-      font-size: 1.8rem;
-      line-height: 2;
-    }
-  `}
+  p {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    line-height: 2;
+  }
 `

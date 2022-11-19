@@ -5,7 +5,7 @@ import { render, screen } from '~/utils/tests'
 
 import { Navigation } from '.'
 
-describe('<Navigation />', () => {
+describe.skip('<Navigation />', () => {
   it('renders correctly', () => {
     render(
       <MemoryRouter>

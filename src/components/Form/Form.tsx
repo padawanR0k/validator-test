@@ -27,7 +27,7 @@ export function Form({ formContext }: FormProps) {
     <FormProvider {...formContext}>
       <form onSubmit={formContext.handleSubmit(onValid, onError)}>
         <S.Page>
-          <Heading align="center">SignUp</Heading>
+          <h1>SignUp</h1>
 
           <S.Container>
             <Controller
