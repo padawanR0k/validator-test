@@ -41,8 +41,6 @@ export const yupSchema = yup
       .required(PASSWORD_REQUIRED_MESSAGE),
     passwordConfirm: yup
       .string()
-      .min(8, PASSWORD_CONFIRM_MIN_MESSAGE)
-      .max(32, PASSWORD_CONFIRM_MAX_MESSAGE)
       .oneOf([yup.ref('password')], PASSWORD_CONFIRM_NOT_MATCHED_MESSAGE)
       .required(PASSWORD_CONFIRM_REQUIRED_MESSAGE),
   })
