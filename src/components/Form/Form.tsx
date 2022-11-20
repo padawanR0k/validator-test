@@ -39,7 +39,7 @@ export function Form({ formContext }: FormProps) {
                   validateStatus={formState.errors?.id ? 'error' : 'success'}
                   help={formState.errors?.id?.message || ''}
                 >
-                  <Input type="text" id="id" {...field} />
+                  <Input aria-label="id" type="text" id="id" {...field} />
                 </Item>
               )}
             />
@@ -52,7 +52,7 @@ export function Form({ formContext }: FormProps) {
                   validateStatus={formState.errors?.email ? 'error' : 'success'}
                   help={formState.errors?.email?.message}
                 >
-                  <Input type="text" id="email" {...field} />
+                  <Input aria-label="email" type="text" id="email" {...field} />
                 </Item>
               )}
             />
@@ -68,13 +68,19 @@ export function Form({ formContext }: FormProps) {
                   }
                   help={formState.errors?.password?.message}
                 >
-                  <Input type="password" id="password" {...field} />
+                  <Input
+                    aria-label="password"
+                    type="password"
+                    id="password"
+                    {...field}
+                  />
                 </Item>
               )}
             />
 
             <Controller
               name="passwordConfirm"
+              aria-label="password-confirm"
               control={control}
               render={({ field, formState }) => (
                 <Item
@@ -84,7 +90,12 @@ export function Form({ formContext }: FormProps) {
                   }
                   help={formState.errors?.passwordConfirm?.message}
                 >
-                  <Input type="password" id="passwordConfirm" {...field} />
+                  <Input
+                    aria-label="password-confirm"
+                    type="password"
+                    id="passwordConfirm"
+                    {...field}
+                  />
                 </Item>
               )}
             />
