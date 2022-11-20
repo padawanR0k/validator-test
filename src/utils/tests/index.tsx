@@ -20,9 +20,9 @@ const customRender = (
   options: RenderOptions = {}
 ): RenderResult =>
   render(ui, {
-    wrapper: ({ children }) => (
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
-    ),
+    // wrapper: ({ children }) => (
+    //   <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    // ),
     ...options,
   })
 

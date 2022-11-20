@@ -4,7 +4,7 @@ import { render, screen } from '~/utils/tests'
 
 import { Home } from '.'
 
-describe('<Home />', () => {
+describe.skip('<Home />', () => {
   it('renders correctly', () => {
     render(
       <MemoryRouter>
